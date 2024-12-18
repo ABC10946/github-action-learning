@@ -18,3 +18,5 @@ jobs:
         run: ls -la
       - name: run helmfile
         run: helmfile
+      - name: curl kubernetes endpoint
+        run: curl -k https://abcke.local:6443
