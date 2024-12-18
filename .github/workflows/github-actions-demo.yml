@@ -7,15 +7,6 @@ jobs:
     steps:
       - name: curl example.com
         run: curl http://example.com
-      - name: setup helm
-        uses: azure/setup-helm@v3
-      - name: helmfile install
-        run: |
-          wget https://github.com/helmfile/helmfile/releases/download/v1.0.0-rc.8/helmfile_1.0.0-rc.8_linux_amd64.tar.gz
-          tar -zxvf helmfile_1.0.0-rc.8_linux_amd64.tar.gz
-          mv helmfile /usr/local/bin/helmfile
-      - name: list directory
-        run: ls -la
       - name: run helmfile
         run: helmfile
       - name: curl kubernetes endpoint
